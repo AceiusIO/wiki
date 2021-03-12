@@ -1,8 +1,6 @@
 const wikiarticle = Vue.component('wikiarticle', {
     props: ['title'],
     template: `<article>
-        <section class="w3-container w3-red">You're currently viewing the <span class="mk-bolder">staging</span> wiki. <a href="https://stuffby.acei.us/wiki">Click here</a> for the <span class="mk-bolder">production</span> wiki.</section>
-        <br>
         <section class="w3-container">
         <h2 class="w3-border-bottom">{{title}}</h2>
         <!--<section id="editing-controls">
@@ -18,11 +16,11 @@ const wikiarticle = Vue.component('wikiarticle', {
         </section>
         </section>
     </article>`,
-    /*data: function() {
-        return {
-            articlecontent: ''
-        }
-    }*/
+});
+
+const stagingmessage = Vue.component('stagingmessage', {
+    template: `<section class="w3-container w3-red">You're currently viewing the <span class="mk-bolder">staging</span> wiki. For the <span class="mk-bolder"><a href="https://stuffby.acei.us/wiki">production</a></span> wiki.</section>`,
+    name: 'stagingmessage'
 });
 
 const wikiVM = new Vue({
